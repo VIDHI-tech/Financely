@@ -1,5 +1,6 @@
 import React from "react";
 import { Line, Pie } from "@ant-design/charts";
+import "./styles.css";
 
 function ChartComponent({ sortedTransactions }) {
   const data = sortedTransactions.map((item) => {
@@ -55,16 +56,16 @@ function ChartComponent({ sortedTransactions }) {
   let chart;
   let pieChart;
   return (
-    <div className="charts-wrapper">
-      <div>
+    <div className="chartBlock">
+      <div className="leftChart">
         <h2 style={{ marginTop: 0 }}>Your Analytics</h2>
         <Line
           {...config}
           onReady={(chartInstance) => (chart = chartInstance)}
         />
       </div>
-      <div>
-        <h2>Your Spendings</h2>
+      <div className="rightChart">
+        <h2 style={{ marginTop: 0 }}>Your Spendings</h2>
         <Pie
           {...spendingConfig}
           onReady={(chartInstance) => (pieChart = chartInstance)}
